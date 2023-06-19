@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --color-white: #fff;
+  --bg-dashboard: #aac9fb;
+  --bg-sidebar: #fdfcfe;
+  --color-black: #111;
+}
+
+main {
+  display: flex;
+  min-height: 100vh;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.dashboard {
+  flex: 6;
+  background-color: var(--bg-dashboard);
+  padding: 2rem 3rem;
+}
+
+.dashboard h1 {
+  font-size: 3rem;
+}
+
+.dashboard-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.dashboard-box section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
+  gap: 2rem;
+}
+
+.dashboard-box .box {
+  background-color: #fff;
+  flex: 1;
+  border-radius: 0.5rem;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.sidebar {
+  flex: 1;
+  transition: all 2s ease;
+  background-color: var(--bg-sidebar);
+  padding: 2rem 3rem;
+}
+
+.sidebar .logo img {
+  width: 200px;
+  border-radius: 1rem;
+}
+
+.sidebar ul {
+  margin-top: 3rem;
+}
+
+.sidebar li {
+  width: 100%;
+  transition: all 0.2s ease;
+  margin: 0.5rem 0;
+}
+
+.sidebar a {
+  color: var(--color-black);
+  width: 100%;
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+}
+
+.sidebar a:hover {
+  background: linear-gradient(to right, #6a97f2, #043584);
+  color: var(--color-white);
+}
+
+/* UserList Styles  */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 3rem;
+}
+
+table thead th {
+  border-bottom: 2px solid #222;
+}
+
+table td,
+table th {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+td.active {
+  background-color: rgb(6, 170, 6);
+  color: var(--color-white);
+}
+
+td span {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  color: var(--color-white);
+}
+
+td span.active {
+  background-color: rgb(6, 127, 6);
+}
+
+td span.un-active {
+  background-color: rgb(197, 7, 7);
+}
+
+table td img {
+  width: 50px;
+  border-radius: 50%;
+}
