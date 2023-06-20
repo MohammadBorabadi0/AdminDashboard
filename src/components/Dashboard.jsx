@@ -1,18 +1,18 @@
 import UserList from "./UserList";
+import { HiOutlineBars3BottomLeft } from "react-icons/hi2";
 
-const Dashboard = () => {
+const Dashboard = ({ active, setActive }) => {
   return (
     <div className="dashboard">
-      <h1>Dashboard</h1>
+      <section className="dashboard-header">
+        <HiOutlineBars3BottomLeft onClick={() => setActive(!active)} />
+        <h1>Dashboard</h1>
+      </section>
       <section className="dashboard-box">
-        <section>
-          <div className="box">Box1</div>
-          <div className="box">Box2</div>
-        </section>
-        <section>
-          <div className="box">Box3</div>
-          <div className="box">Box4</div>
-        </section>
+        <div className="box">Box1</div>
+        <div className="box">Box2</div>
+        <div className="box">Box3</div>
+        <div className="box">Box4</div>
       </section>
       <UserList />
     </div>

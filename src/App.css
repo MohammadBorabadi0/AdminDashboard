@@ -29,34 +29,36 @@ main {
 }
 
 .dashboard {
-  flex: 6;
+  width: 100%;
   background-color: var(--bg-dashboard);
   padding: 2rem 3rem;
+  margin-left: 300px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
 }
 
 .dashboard h1 {
   font-size: 3rem;
 }
 
+.dashboard svg {
+  font-size: 3rem;
+  display: none;
+}
+
 .dashboard-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   margin-top: 3rem;
 }
 
-.dashboard-box section {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex: 1;
-  gap: 2rem;
-}
-
 .dashboard-box .box {
   background-color: #fff;
-  flex: 1;
   border-radius: 0.5rem;
   height: 200px;
   display: flex;
@@ -66,8 +68,10 @@ main {
 }
 
 .sidebar {
-  flex: 1;
-  transition: all 2s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
   background-color: var(--bg-sidebar);
   padding: 2rem 3rem;
 }
@@ -143,4 +147,58 @@ td span.un-active {
 table td img {
   width: 50px;
   border-radius: 50%;
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+  .dashboard {
+    margin-left: 230px;
+  }
+  .sidebar {
+    width: 230px;
+  }
+  .sidebar .logo img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 992px) {
+  .dashboard-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 300px;
+  }
+  .dashboard {
+    margin-left: 300px;
+  }
+  .dashboard-box {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    left: -300px;
+    transition: all 1s ease;
+    width: 200px;
+  }
+  .sidebar.active {
+    left: 0;
+  }
+  .dashboard {
+    margin-left: 0;
+    transition: all 1s ease;
+  }
+  .sidebar.active ~ .dashboard {
+    margin-left: 200px;
+  }
+  .dashboard svg {
+    display: block;
+  }
 }
